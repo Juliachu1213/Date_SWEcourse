@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Login</title>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"
+    />
+  </head>
+  <!--https://django-allauth.readthedocs.io/en/latest/templates.html-->
+  <body>
+    {% load socialaccount %} {% block page_content %} {% csrf_token %}
+    <h1>{{message}}</h1>
+    <a href="{% provider_login_url 'google' method='oauth2' %}">Google登入</a>
+    {% endblock %}
+  </body>
+</html>
